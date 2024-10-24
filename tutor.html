@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Portfolio</title>
+    <link rel="stylesheet" href="assets/css/tutor.css">
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(el => {
+                el.style.display = el.classList.contains(lang) ? 'block' : 'none';
+            });
+        }
+
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const modeButton = document.getElementById('mode-button');
+            if (body.classList.contains('dark-mode')) {
+                modeButton.textContent = 'Light Mode';
+            } else {
+                modeButton.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: #314076;
+            color: #ffde59;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: 2px solid #314076;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .apply-button:hover {
+            background: #ffde59;
+            color: #314076;
+            border: 2px solid #ffde59;
+        }
+
+        .mode-button {
+            display: inline-block;
+            background: #314076;
+            color: #ffde59;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 2px solid #314076;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .mode-button:hover {
+            background: #ffde59;
+            color: #314076;
+            border: 2px solid #ffde59;
+        }
+    </style>
+</head>
+<body onload="switchLanguage('ms')">
+    <header>
+        <div class="language-switch">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('ms')">Malay</button>
+        </div>
+        <h1>Aqeel Tutoring</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="mode-button" class="mode-button" onclick="toggleMode()">Dark Mode</button>
+        <!-- <div><img src="assets/css/images/gambar.jpg" alt="Your Picture" class="header-picture"></div> -->
+        
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="lang en">
+            🌟 Hello! I’m Sir Aqeel Your STEM Tutor! 🌟<br><br>
+            Are you ready to explore the fascinating world of science, technology, engineering, and mathematics (STEM)? Look no further—I’m here to guide you through this exciting journey! 🚀<br><br>
+            🔬 Who Am I?<br>
+            My name is Nabeel Aqeel, and I’m passionate about all things STEM. Whether it’s unraveling the mysteries of the universe, diving into complex equations, or tinkering with circuits, I thrive on helping students discover the magic of science and its practical applications.
+        </p>
+        <p class="lang ms">
+            🌟 Hai! Saya Sir Aqeel Tutor STEM Anda! 🌟<br><br>
+            Adakah anda bersedia untuk menerokai dunia sains, teknologi, kejuruteraan, dan matematik (STEM) yang menarik? Jangan risau—saya di sini untuk membimbing anda melalui perjalanan yang menarik ini! 🚀<br><br>
+            🔬 Siapakah Saya?<br>
+            Nama saya Nabeel Aqeel, dan saya sangat berminat dengan semua perkara berkaitan STEM. Sama ada merungkai misteri alam semesta, menyelami persamaan kompleks, atau bermain dengan litar, saya bersemangat membantu pelajar menemui keajaiban sains dan aplikasi praktikalnya.
+        </p>
+    </section>
+
+    <section id="services">
+        <h2>STEM SUBJECT</h2>
+        <ul class="lang en">
+            <li>Mathematics</li>
+            <li>Additional Mathematics</li>
+            <li>Science</li>
+            <li>Physics</li>
+            <li>Chemistry</li>
+            <li>Biology</li>
+        </ul>
+        <ul class="lang ms">
+            <li>Matematik</li>
+            <li>Matematik Tambahan</li>
+            <li>Sains</li>
+            <li>Fizik</li>
+            <li>Kimia</li>
+            <li>Biologi</li>
+        </ul>
+    </section>
+
+    <!-- <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>Client feedback goes here.</p>
+    </section> -->
+
+    <!-- <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+            <button type="submit">Send</button>
+        </form>
+    </section>-->
+    <section id="apply">
+        <h2>Apply Now</h2>
+        <button onclick="window.location.href='https://github.com/nabeelaqeel/nabeelaqeel.github.io'" class="apply-button">Apply Now</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Aqeel Tutoring. All rights reserved.</p>
+    </footer>
+</body>
+</html>

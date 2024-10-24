@@ -1,0 +1,250 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: #314076;
+    color: #ffde59;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content img.header-picture {
+    width: 50px; /* Adjusted width */
+    height: 50px; /* Adjusted height */
+    border-radius: 50%;
+    margin-left: 20px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #000; /* Set text color to black */
+    text-decoration: none;
+}
+
+.language-switch {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.language-switch button {
+    background: #ffde59;
+    color: #314076;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.language-switch button:hover {
+    background: #314076;
+    color: #ffde59;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #314076;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #e4e4e4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #314076;
+    color: #ffde59;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: #ffde59;
+    color: #314076;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #314076;
+    color: #ffde59;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Hide all language sections by default */
+.lang {
+    display: none;
+}
+
+/* Show the selected language section */
+.lang.en {
+    display: block;
+}
+
+.apply-button {
+    display: inline-block;
+    background: #314076;
+    color: #ffde59;
+    padding: 15px 30px; /* Increased padding for a box-like appearance */
+    text-decoration: none;
+    border: 2px solid #314076; /* Added border */
+    border-radius: 5px;
+    font-size: 18px; /* Increased font size */
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.apply-button:hover {
+    background: #ffde59;
+    color: #314076;
+    border: 2px solid #ffde59; /* Change border color on hover */
+}
+
+.mode-button {
+    display: inline-block;
+    background: #314076;
+    color: #ffde59;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #314076;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.mode-button:hover {
+    background: #ffde59;
+    color: #314076;
+    border: 2px solid #ffde59;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background: #1f1f1f;
+    color: #ffde59;
+}
+
+.dark-mode nav ul li a {
+    color: #ffde59; /* Set text color to yellow */
+}
+
+.dark-mode section {
+    background: #1f1f1f;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode ul li {
+    background: #333333;
+}
+
+.dark-mode form input, .dark-mode form textarea {
+    background: #333333;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+.dark-mode form button {
+    background: #ffde59;
+    color: #314076;
+}
+
+.dark-mode form button:hover {
+    background: #314076;
+    color: #ffde59;
+}
+
+.dark-mode footer {
+    background: #1f1f1f;
+    color: #ffde59;
+}
+
+.dark-mode .apply-button {
+    background: #ffde59;
+    color: #314076;
+    border: 2px solid #ffde59;
+}
+
+.dark-mode .apply-button:hover {
+    background: #314076;
+    color: #ffde59;
+    border: 2px solid #314076;
+}
+
+.dark-mode .mode-button {
+    background: #ffde59;
+    color: #314076;
+    border: 2px solid #ffde59;
+}
+
+.dark-mode .mode-button:hover {
+    background: #314076;
+    color: #ffde59;
+    border: 2px solid #314076;
+}
+

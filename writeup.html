@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write-up</title>
+    <link rel="stylesheet" href="assets/css/writeup.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const writeupContent = document.getElementById('writeup-content');
+            const urlParams = new URLSearchParams(window.location.search);
+            const file = urlParams.get('file');
+
+            if (file) {
+                fetch(`assets/writeups/${file}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(text => {
+                        writeupContent.innerHTML = marked.parse(text);
+                    })
+                    .catch(error => {
+                        writeupContent.innerHTML = '<p>Error loading write-up.</p>';
+                        console.error('Error loading write-up:', error);
+                    });
+            } else {
+                writeupContent.innerHTML = '<p>No write-up specified.</p>';
+            }
+
+            // Dark mode toggle
+            const modeButton = document.getElementById('mode-button');
+            modeButton.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                document.querySelector('header').classList.toggle('dark-mode');
+                document.querySelectorAll('section').forEach(section => section.classList.toggle('dark-mode'));
+                document.querySelectorAll('#writeup-content').forEach(content => content.classList.toggle('dark-mode'));
+                modeButton.classList.toggle('dark-mode');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Write-up</h1>
+            <button id="mode-button" class="mode-button">Dark Mode</button>
+        </div>
+    </header>
+    <section id="writeup">
+        <div id="writeup-content"></div>
+    </section>
+</body>
+</html>
