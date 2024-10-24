@@ -21,6 +21,11 @@
                         return response.text();
                     })
                     .then(text => {
+
+                        const adjustedText = text.replace(/!\[(.*?)\]\((.*?)\)/g, (match, alt, src) => {
+                            const newSrc = src.startsWith('http') ? src : `assets/images/${src}`;
+                            return `![${alt}](${newSrc})`;
+                        });
                         writeupContent.innerHTML = marked.parse(text);
                     })
                     .catch(error => {
