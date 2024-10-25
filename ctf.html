@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Competition</title>
+    <link rel="stylesheet" href="assets/css/ctf2.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const writeupContent = document.getElementById('writeup-content');
+            const urlParams = new URLSearchParams(window.location.search);
+            const competition = urlParams.get('competition');
+
+            if (competition) {
+                document.getElementById('competition-title').textContent = competition.replace(/-/g, ' ').toUpperCase() + ' Write-ups';
+
+                // Fetch the list of write-ups for the competition
+                fetch(`assets/writeups/${competition}.json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const writeupList = document.getElementById('writeup-list');
+                        data.writeups.forEach(writeup => {
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.href = `writeup.html?file=${writeup.file}`;
+                            link.textContent = writeup.title;
+                            listItem.appendChild(link);
+                            writeupList.appendChild(listItem);
+                        });
+                    })
+                    .catch(error => {
+                        writeupContent.innerHTML = '<p>Error loading write-ups.</p>';
+                        console.error('Error loading write-ups:', error);
+                    });
+            } else {
+                writeupContent.innerHTML = '<p>No competition specified.</p>';
+            }
+
+            // Dark mode toggle
+            const modeButton = document.getElementById('mode-button');
+            modeButton.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                document.querySelector('header').classList.toggle('dark-mode');
+                document.querySelectorAll('section').forEach(section => section.classList.toggle('dark-mode'));
+                document.querySelectorAll('#writeup-content').forEach(content => content.classList.toggle('dark-mode'));
+                modeButton.classList.toggle('dark-mode');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 id="competition-title">CTF Competition Write-ups</h1>
+            <button id="mode-button" class="mode-button">Dark Mode</button>
+        </div>
+    </header>
+    <section id="writeups">
+        <!-- <h2>Write-ups</h2> -->
+        <ul id="writeup-list"></ul>
+    </section>
+</body>
+</html>
