@@ -1,16 +1,8 @@
 {
     "writeups": [
         {
-            "title": "Write-up 1",
-            "file": "dead_ctf_writeup1.md"
-        },
-        {
-            "title": "Write-up 2",
-            "file": "dead_ctf_writeup2.md"
-        },
-        {
-            "title": "Write-up 3",
-            "file": "dead_ctf_writeup3.md"
+            "title": "Traffic Analysis",
+            "file": "traffic_analysis.md"
         }
     ]
 }

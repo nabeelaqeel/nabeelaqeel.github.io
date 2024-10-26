@@ -19,6 +19,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+
+            const body = document.body;
+            const modeButton = document.getElementById('mode-button');
+
+            // Set dark mode as the default
+            body.classList.add('dark-mode');
+            modeButton.textContent = 'Light Mode';
+
+
             const writeupContent = document.getElementById('writeup-content');
 
             // Function to load and display a Markdown file
@@ -104,6 +113,7 @@
             <li><a href="writeup.html?file=pwn102.md">Pwn 102</a></li>
             <li><a href="writeup.html?file=pwn103.md">Pwn 103</a></li>
             <li><a href="writeup.html?file=pwn106.md">Pwn 106</a></li>
+            <li><a href="writeup.html?file=traffic_analysis.md">Traffic Analysis</a></li>
             <!-- Add more write-ups as needed -->
         </ul>
     </section>

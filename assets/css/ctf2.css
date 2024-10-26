@@ -4,13 +4,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #3b2f2f; /* Dark brown background color */
+    background-color: #060505; /* Dark brown background color */
     color: #e0dcdc; /* Light text color for contrast */
     transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background: #2e2424; /* Darker brown header background color */
+    background: #040404; /* Darker brown header background color */
     color: #e0dcdc; /* Light text color for contrast */
     padding: 1rem 0;
     text-align: center;
@@ -85,10 +85,14 @@ ul {
 ul li {
     background: #4a3b3b; /* Dark brown background for list items */
     margin: 5px 0;
-    padding: 10px;
+    padding: 20px; /* Increased padding for bigger box */
     border-radius: 5px;
     flex: 1 1 calc(50% - 1rem); /* Two items per row */
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center the text */
 }
 
 ul li a {
