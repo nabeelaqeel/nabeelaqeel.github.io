@@ -3,6 +3,10 @@
         {
             "title": "Traffic Analysis",
             "file": "traffic_analysis.md"
+        },
+        {
+            "title": "Host Buster",
+            "file": "hostbuster.md"
         }
     ]
 }

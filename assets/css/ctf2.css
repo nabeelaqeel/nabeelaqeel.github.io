@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background: #040404; /* Darker brown header background color */
+    background: #000000; /* Darker brown header background color */
     color: #e0dcdc; /* Light text color for contrast */
     padding: 1rem 0;
     text-align: center;
